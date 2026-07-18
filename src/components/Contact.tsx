@@ -24,7 +24,7 @@ export function Contact() {
     setErrorMsg('');
 
     try {
-      const baseUrl = import.meta.env.VITE_API_URL?.trim() || window.location.origin;
+      const baseUrl = import.meta.env.VITE_API_URL?.trim() || 'https://portfolio-git-main-mahnoor-shahids-projects.vercel.app';
       const response = await fetch(`${baseUrl.replace(/\/$/, '')}/api/contact`, {
         method: 'POST',
         headers: {

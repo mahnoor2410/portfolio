@@ -24,7 +24,8 @@ export function Contact() {
     setErrorMsg('');
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api/contact`, {
+      const baseUrl = import.meta.env.VITE_API_URL?.trim() || window.location.origin;
+      const response = await fetch(`${baseUrl.replace(/\/$/, '')}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
